@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+
+// instring é uma cadeia de caracteres terminado com um nulo \0
+// VASCO tem \0 na posição 5
+
+int Mystrlen(char *str);
+
+void main(){
+system("cls");
+
+char frase[30]="Meu nome e Eneias!!!";
+printf("%s - %d caracteres.\n",Mystrlen(frase));
+
+
+}
+
+
+int Mystrlen(char *str){
+
+    int tamanho;
+    for(tamanho = 0; str[tamanho] !='\0'; tamanho++);
+    return(tamanho);
+}
