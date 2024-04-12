@@ -18,7 +18,7 @@ exit(1);
 
 printf("arquivo aberto com sucesso");
 
-while (fscanf(fp, "%d  %s", &numero, palavra ) !=EOF)
+while (fscanf(fp, "%d  %s", &numero, palavra ) !=EOF) // pode ser null tbm
 {
     printf("resultado: %d %s \n", numero, palavra);
 }
