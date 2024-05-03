@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+
+#define TAMANHO 400000
+#define VERDADEIRO 1
+#define FALSO 0
+
+void swap (int *a, int *b);
+int particao(int vetor[], int inf, int sup);
+void quicksort(int vetor[], int inf, int sup);
+
+
+void main(){
+system("cls");
+
+int v[] = {3, 6, 4, 5, 1, 7, 2};
+int t = sizeof(v) / sizeof(v[0]);
+quicksort (v,0,t-1);
+for (int i = 0; i < t; i++) printf("%d ",  v[i]);
+printf("\n");
+
+}
+
+void swap (int *a, int *b){
+    int temp = *a; // *a: valor apontado por a
+ *a = *b;
+ *b = temp;
+}
+
+int particao(int vetor[], int inf, int sup) {
+
+int pivor = vetor[(inf+sup)/2];
+int i = inf-1;
+int j = sup+1;
+
+while(VERDADEIRO) {
+    do{i++;} while (vetor[i]<pivor);
+    do{j--;} while (vetor[j]>pivor);
+    if (i >= j) return 1;
+    swap (&vetor[i], &vetor[j]);
+
+}
+}
+
+void quicksort(int vetor[], int inf, int sup){
+
+if(inf < sup) {
+int p = particao(vetor, inf, sup); // calculando posicão do pivor
+quicksort(vetor, inf, p-1);
+quicksort(vetor, p+1, sup);
+}
+
+}
+
+
