@@ -1,0 +1,5 @@
+como abrir arquivo fracionado
+
+abrir como folder
+gcc nome.c nome.c -o nome.exe
+.\nome.exe
